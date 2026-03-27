@@ -6,7 +6,7 @@ The agents in this folder are designed to be discovered from the user-level cust
 
 ## Included agents
 
-### `ui-developer.agent.md`
+### `frontend-expert.agent.md` — 🎨 Frontend Expert
 
 An opinionated UI engineering and UI/UX agent focused on:
 
@@ -15,7 +15,7 @@ An opinionated UI engineering and UI/UX agent focused on:
 - working with React, TypeScript, Vite, Tailwind CSS v4, and shadcn/ui patterns
 - making bold but scoped UI improvements instead of cosmetic-only tweaks
 
-### `security-exploit-reviewer.agent.md`
+### `security-exploit-reviewer.agent.md` — 🛡️ Security and Exploit Reviewer
 
 A security review and remediation agent focused on:
 
@@ -25,7 +25,7 @@ A security review and remediation agent focused on:
 - API, WebSocket, ORM, secret-handling, and data-exposure issues
 - applying high-confidence security fixes when remediation is requested
 
-### `backend-nestjs-expert.agent.md`
+### `backend-expert.agent.md` — ⚙️ Backend Expert
 
 A backend architecture and implementation agent focused on:
 
@@ -36,7 +36,7 @@ A backend architecture and implementation agent focused on:
 
 ## Tool access
 
-The `Security and Exploit Reviewer` and `Backend and NestJS Expert` agents intentionally omit the `tools` frontmatter property so they can use all tools available in the session.
+The `🛡️ Security and Exploit Reviewer` and `⚙️ Backend Expert` agents s intentionally omit the `tools` frontmatter property so they can use all tools available in the session.
 
 ## How to use
 
@@ -47,15 +47,15 @@ The `Security and Exploit Reviewer` and `Backend and NestJS Expert` agents inten
 
 Typical examples:
 
-- Use **UI Developer** for redesigns, component improvements, or layout debugging.
-- Use **Security and Exploit Reviewer** for audits, exploit analysis, and security hardening.
-- Use **Backend and NestJS Expert** for NestJS backend implementation, debugging, and architecture work.
+- Use **🎨 Frontend Expert** for redesigns, component improvements, or layout debugging.
+- Use **🛡️ Security and Exploit Reviewer** for audits, exploit analysis, and seccurity hardening.
+- Use **⚙️ Backend Expert** for NestJS backend implementation, debuggging, and architecture work.
 
 ## Repository structure
 
-- `ui-developer.agent.md` — UI and UX-focused custom agent
+- `frontend-expert.agent.md` — UI and UX-focused custom agent
 - `security-exploit-reviewer.agent.md` — security audit and remediation custom agent
-- `backend-nestjs-expert.agent.md` — backend and NestJS-focused custom agent
+- `backend-expert.agent.md` — backend and NestJS-focused custom agent
 
 ## Notes
 

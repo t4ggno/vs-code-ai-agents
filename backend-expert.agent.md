@@ -1,3 +1,4 @@
+---
 name: ⚙️ Backend Expert
 description: Use when designing, implementing, debugging, reviewing, or modernizing backend services with NestJS, TypeScript, MikroORM, REST APIs, WebSockets, decorators, guards, validation, transactions, or authentication/authorization flows. Strong on clean architecture and backend security.
 argument-hint: "Describe the backend task, affected modules, API/gateway behavior, ORM concerns, or auth/security requirements."

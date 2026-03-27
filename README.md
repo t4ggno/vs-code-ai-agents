@@ -34,9 +34,36 @@ A backend architecture and implementation agent focused on:
 - MikroORM repositories, serialization, transactions, request context, and locking
 - REST APIs, WebSockets, queues, and secure authentication/authorization flows
 
+### `tauri-expert.agent.md` — 🦀 Tauri Expert
+
+A Tauri-specific agent focused on:
+
+- Tauri v2 architecture and frontend↔core IPC boundaries
+- commands, events, plugins, sidecars, capabilities, and permissions
+- packaging, updater flows, native integrations, and platform-specific behavior
+- secure desktop and mobile app development with Rust + web frontends
+
+### `java-expert.agent.md` — ☕ Java Expert
+
+A general Java development agent focused on:
+
+- Java application and library development
+- Maven and Gradle build/package management
+- JDK and toolchain-aware debugging, testing, and packaging
+- VS Code Java workflows, dependency management, and architecture hygiene
+
+### `hytale-mod-development.agent.md` — 🎮 Hytale Mod Development
+
+A Hytale-specific modding agent focused on:
+
+- Java server plugins, data assets, art assets, and prefab/world workflows
+- Hytale documentation usage and version-aware modding guidance
+- early-access-safe creator workflows, packaging, and publishing
+- modding best practices grounded in official Hytale direction and community docs
+
 ## Tool access
 
-The `🛡️ Security and Exploit Reviewer` and `⚙️ Backend Expert` agents s intentionally omit the `tools` frontmatter property so they can use all tools available in the session.
+These agents currently omit the `tools` frontmatter property so they can use all tools available in the session unless a future agent intentionally scopes them.
 
 ## How to use
 
@@ -48,14 +75,20 @@ The `🛡️ Security and Exploit Reviewer` and `⚙️ Backend Expert` agents s
 Typical examples:
 
 - Use **🎨 Frontend Expert** for redesigns, component improvements, or layout debugging.
-- Use **🛡️ Security and Exploit Reviewer** for audits, exploit analysis, and seccurity hardening.
-- Use **⚙️ Backend Expert** for NestJS backend implementation, debuggging, and architecture work.
+- Use **🛡️ Security and Exploit Reviewer** for audits, exploit analysis, and security hardening.
+- Use **⚙️ Backend Expert** for NestJS backend implementation, debugging, and architecture work.
+- Use **🦀 Tauri Expert** for Tauri IPC, permissions, packaging, and native/runtime debugging.
+- Use **☕ Java Expert** for Java application work, package management, build issues, and debugger/test workflows.
+- Use **🎮 Hytale Mod Development** for Hytale plugins, assets, modding docs, creator workflows, and publishing guidance.
 
 ## Repository structure
 
 - `frontend-expert.agent.md` — UI and UX-focused custom agent
 - `security-exploit-reviewer.agent.md` — security audit and remediation custom agent
 - `backend-expert.agent.md` — backend and NestJS-focused custom agent
+- `tauri-expert.agent.md` — Tauri architecture and native app custom agent
+- `java-expert.agent.md` — general Java development custom agent
+- `hytale-mod-development.agent.md` — Hytale creator and modding custom agent
 
 ## Notes
 

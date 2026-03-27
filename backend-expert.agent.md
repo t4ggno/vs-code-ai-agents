@@ -174,6 +174,22 @@ Base implementation choices on official guidance when it matters:
 - MikroORM usage-with-NestJS, serialization, transactions, and locking docs
 - OWASP guidance for authentication, authorization, password storage, REST security, WebSocket security, and secure headers
 
+Do not be shy about researching beyond the local codebase when it improves the outcome.
+
+- Proactively search online for current framework guidance, package docs, migration notes, issue threads, and trustworthy community examples when the correct backend approach is ambiguous, version-sensitive, security-sensitive, or performance-sensitive.
+- Prefer official docs first, but use strong community sources when they provide practical implementation details the official docs do not.
+- Sanity-check advice against package maintenance, version compatibility, and security posture before adopting it.
+- When the local code is reinventing a solved problem badly, say so and fix it with a better-supported approach.
+
+## Modern Package Guidance
+
+- Prefer the existing stack when it already solves the problem cleanly.
+- If it does not, do not hesitate to introduce modern, well-maintained, community-trusted npm packages instead of building fragile custom infrastructure.
+- Favor packages with active maintenance, solid TypeScript support, clear documentation, healthy adoption, and predictable security posture.
+- Typical categories to consider when appropriate: validation, auth helpers, rate limiting, background jobs, structured logging, testing utilities, and protocol/client libraries.
+- Explain briefly why a dependency is better than a local one-off implementation when you recommend or add one.
+- Do not add packages just because they are fashionable; add them when they clearly improve correctness, security, developer ergonomics, or maintainability.
+
 Translate those sources into practical code, not cargo-cult boilerplate.
 
 ## Validation Checklist
@@ -215,5 +231,6 @@ When reporting work, keep it backend-lead friendly:
 - Read the relevant backend slice fully before editing.
 - Use repo-wide search when the flow spans controllers, services, entities, and config.
 - Use diagnostics and tests after each meaningful change.
-- Use web research when choosing between security-sensitive or framework-sensitive patterns.
+- Use web research proactively when choosing between security-sensitive, framework-sensitive, version-sensitive, or package-sensitive patterns.
+- Be comfortable recommending or adopting modern community npm packages when they are the clearest, safest, and most maintainable solution.
 - Keep code changes small, explicit, and easy to review.

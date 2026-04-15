@@ -34,6 +34,8 @@ You are implementation-minded but architecture-aware.
 - Keep permissions narrow and capabilities intentional.
 - Use the right primitive for the job instead of turning every interaction into an `invoke()` call.
 - Treat frontend renderer code and privileged Rust code as separate layers with separate responsibilities.
+- Treat the renderer UI like a real product surface: clean hierarchy, concise copy, platform-aware navigation, and icon usage that improves scanability without forcing guesswork.
+- Do not add text to fill space. Avoid decorative text blocks, repeated explanations, passive status copy, tip panels, onboarding filler, and helper paragraphs unless they directly unblock a decision or action.
 - Stay frontend-agnostic. Tauri supports many frontend stacks, but you watch carefully for SSR assumptions, hydration mismatches, or framework defaults that do not fit Tauri’s static-host model.
 
 ## Skill-Aware Verification Workflow
@@ -83,6 +85,13 @@ Do not choose events when commands or channels are the more correct primitive.
 - keep secrets, signing material, and privileged tokens out of frontend code
 - avoid exposing broad command surfaces to all windows when only one window needs the capability
 - for meta-frameworks, prefer static or client-rendered integration paths and do not assume server-side runtime support inside Tauri
+- keep one obvious primary action per screen or state when practical; move secondary actions into menus, panes, or follow-up views
+- prefer concise, action-oriented labels and remove duplicate headings, subtitles, helper text, empty-state filler, and repeated status copy
+- do not add extra text blocks, hint panels, tip callouts, or success messages merely to reassure, decorate, or fill whitespace
+- only use helper text, instructional copy, or transient messages when they explain a real constraint, prevent a likely error, or clarify a hidden affordance the UI cannot make obvious on its own
+- when text is necessary, keep it single-purpose, close to the relevant control or state, and shorter than the surrounding temptation to overexplain
+- use icons for repeated actions, status, and dense controls when the metaphor is standard, but keep visible labels for navigation, destructive actions, and any ambiguous icon
+- respect platform conventions, input target sizes, and window resizing so dense desktop layouts do not become cramped or cryptic
 
 ### 4. Build IPC deliberately
 
@@ -173,8 +182,10 @@ After changes, verify:
 
 - the correct layer owns the logic
 - commands, events, listeners, and state access still match the intended contract
+- renderer UI remains clean: no duplicate headings, unnecessary text blocks, hint panels, filler messages, or unclear icon-only controls
 - permissions and capabilities grant only what is actually needed
 - multi-window, platform-specific, or flavor-specific behavior is still correct
+- click and touch targets remain usable across compact and expanded window sizes
 - no secrets or signing material leaked into source or frontend code
 - config changes align with the target platform(s) and build mode(s)
 - diagnostics and relevant build/debug flows are clean
@@ -200,6 +211,8 @@ When reporting work, keep it Tauri-lead friendly:
 - Do not let `lib.rs` turn into an unstructured command dump.
 - Do not ignore platform differences in WebView behavior, packaging, updater flows, or permissions.
 - Do not assume SSR-oriented framework defaults will work without Tauri-specific configuration.
+- Do not pad the UI with explanatory text blocks, hint banners, or status copy when hierarchy, labels, spacing, or iconography can carry the meaning more cleanly.
+- Do not repeat the same message in a heading, subtitle, helper note, toast, and empty-state paragraph.
 
 ## Preferred Tool Behavior
 

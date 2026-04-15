@@ -107,10 +107,15 @@ Before writing code, decide:
 ### 5. Keep the UI modern but disciplined
 
 - prefer existing shadcn/ui primitives before inventing custom component wrappers
+- follow platform conventions and established layouts before improvising dashboard-like shells
 - use Tailwind intentionally with a consistent spacing and typography rhythm
 - keep client bundles lean; do not turn a whole tree client-side because one child needs interactivity
 - handle loading, empty, error, pending, disabled, and success states explicitly when relevant
 - keep forms accessible, predictable, and easy to validate
+- keep one obvious primary action per screen or state when practical; move secondary detail into supporting panes or later steps
+- prefer concise, action-oriented labels; remove duplicate headings, subtitles, possessive filler, and helper copy that restates the obvious
+- use icons to improve scanability for repeated actions and statuses, but keep visible labels for navigation, destructive actions, and any icon whose meaning is not universal
+- keep empty states and guidance brief; explain only what helps the next step
 - do not turn a focused product screen into a dashboard just because there is room
 
 ### 6. Treat MikroORM as a request-scoped server concern
@@ -148,6 +153,7 @@ Base architecture choices on official guidance when it matters:
 - Next.js docs for App Router, Server Components, Server Actions, Route Handlers, caching, revalidation, middleware, and deployment/runtime behavior
 - React docs for server/client boundaries, Suspense, streaming, and state management
 - Tailwind and shadcn/ui docs for component composition and styling constraints
+- Apple HIG and Material guidance for layout, iconography, and interface writing when making app-like UI decisions
 - MikroORM docs for entity manager lifecycle, request context, serialization, transactions, and locking
 - security guidance for authentication, session handling, redirects, CSRF, and API hardening
 
@@ -160,9 +166,11 @@ After changes, verify:
 - the chosen route and component boundary still matches the intent
 - server-only code is not imported into client bundles
 - loading, error, pending, and empty states behave correctly
+- the UI stays clean and scannable: no duplicate headings, unnecessary hint copy, or ambiguous icon-only controls
 - auth and object-level authorization work for allowed and denied cases
 - cache invalidation or revalidation updates the exact screens affected
 - ORM writes, serialization, and concurrency behavior remain correct
+- touch and click targets remain usable and labeled appropriately where icons are used in dense controls or navigation
 - relevant type checks, diagnostics, builds, and tests are clean
 
 ## Output Format

@@ -47,7 +47,7 @@ When you choose a layout or responsive strategy, ground it in systems that have 
 
 Before changing the UI, explicitly look for:
 
-- **Problematic UI patterns**: overcrowded cards, too many competing actions, duplicated status text, decorative noise, low-contrast surfaces, weak hierarchy, confusing navigation, empty-state bloat, and gratuitous "tips" or helper text.
+- **Problematic UI patterns**: overcrowded cards, too many competing actions, duplicated status text, duplicate headings or subheadings, decorative noise, low-contrast surfaces, weak hierarchy, confusing navigation, empty-state bloat, icon-only controls that require guesswork, and gratuitous "tips" or helper text.
 - **Problematic surface usage**: cards inside cards inside cards, decorative wrappers with no structural value, too many nested containers, and multiple surface treatments competing in the same small area.
 - **Problematic scope creep**: ordinary views turned into dashboards, unnecessary stat cards, KPI tiles, summary panels, quick-action blocks, or extra sections that the user did not ask for.
 - **Problematic code patterns**: deeply nested wrappers, repeated class soup, hard-coded pixel dimensions that fight responsiveness, arbitrary spacing, duplicated JSX structures, fragile absolute positioning, and animation patterns that trigger layout thrash.
@@ -112,6 +112,9 @@ Keep written explanations short. Explain only the decisions that materially affe
 - Keep the UI clean and simple. Do not fill empty space with fluff, onboarding copy, motivational text, hints, or "did you know" content unless the developer or user explicitly wants it.
 - If helper text is necessary, keep it brief, contextual, and secondary to the primary task.
 - Prefer labels, hierarchy, and interaction cues over explanatory paragraphs.
+- Prefer short, action-oriented labels and sentence fragments over marketing copy, repeated summaries, or ornamental prose.
+- Use icons to improve scanability for repeated actions, statuses, and dense controls, but keep visible text labels for primary navigation, destructive actions, and any icon whose meaning is not truly standard.
+- Remove duplicate headings, repeated section intros, and subtitles that simply restate the title.
 - Remove redundant subtitles, repeated descriptions, and "helpful" copy that merely states the obvious.
 - Use spacing intentionally: prefer consistent padding increments and clean margins before inventing decorative separation devices.
 - Favor fluid sizing where appropriate, especially for typography and large containers, so the design adapts smoothly instead of snapping awkwardly across breakpoints.
@@ -248,7 +251,9 @@ Before and after UI work, actively check for:
 - Views that look like dashboards even though the task is focused and singular
 - Empty states that explain too much and help too little
 - Repetitive hint banners, tip boxes, and instructional paragraphs that should be removed or collapsed
+- Duplicate titles, subtitles, or helper copy that repeat the same idea
 - Badge overuse, especially when badges are being used as generic metadata pills instead of meaningful indicators
+- Ambiguous icon-only controls or navigation that require hovering, tooltips, or guesswork to decode
 - Gratuitous stat cards, KPI tiles, overview summaries, or quick-action clusters that add noise rather than utility
 - Cards nested multiple levels deep when spacing or simpler grouping would communicate the structure better
 - Cards that duplicate titles, labels, and metadata unnecessarily
@@ -296,6 +301,7 @@ Before and after UI work, actively check for:
 - Ensure primary actions stand out without relying on color alone.
 - Provide visible focus states that fit the aesthetic.
 - Avoid contrast failures caused by translucent surfaces in dark mode.
+- Do not rely on icons alone when the meaning would be ambiguous, especially for navigation or destructive actions.
 - Avoid decorative clutter that competes with data, forms, or content.
 - Keep components understandable and maintainable; visual ambition must not create brittle JSX.
 - Respect `prefers-reduced-motion` and avoid making motion mandatory for comprehension.
@@ -334,6 +340,8 @@ Keep each section tight and high-signal. Prefer short bullets over long prose. D
 - **Do not** use visual effects that reduce readability in dense interfaces.
 - **Do not** default to badges as a styling shortcut for metadata.
 - **Do not** turn every attribute into a pill.
+- **Do not** hide important navigation or key actions behind unlabeled or unclear icons.
+- **Do not** repeat the same message in a heading, subtitle, helper block, and empty-state paragraph.
 
 ## Handoffs
 
